@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="card">
+        <h2>Post a Blood/Organ Request</h2>
+        <form action="/requests" method="POST">
+            <div class="form-group">
+                <label for="patientName">Patient Name</label>
+                <input type="text" name="patientName" required>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="requestType">Request Type</label>
+                    <select name="type" required>
+                        <option value="">Select Type</option>
+                        <option value="blood">Blood</option>
+                        <option value="organ">Organ</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="specific">Specific Type/Blood Group</label>
+                    <input type="text" name="specific" placeholder="O+, Heart, Kidney" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="urgency">Urgency Level</label>
+                    <select name="urgency" required>
+                        <option value="normal">Normal</option>
+                        <option value="urgent">Urgent</option>
+                        <option value="critical">Critical</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="requiredDate">Required By</label>
+                    <input type="date" name="requiredDate" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="details">Details & Medical Info</label>
+                <textarea name="details" placeholder="Provide medical history and requirements" required></textarea>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="contactPerson">Contact Person Name</label>
+                    <input type="text" name="contactPerson" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactPhone">Contact Phone</label>
+                    <input type="tel" name="contactPhone" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="location">Hospital/Location</label>
+                <input type="text" name="location" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Post Request</button>
+        </form>
+    </div>
+</div>

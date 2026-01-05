@@ -1,0 +1,23 @@
+<h2>Doctors</h2>
+<a href="/admin/doctors/add">Add Doctor</a>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Specialization</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% doctors.forEach(doctor => { %>
+            <tr>
+                <td><%= doctor.name %></td>
+                <td><%= doctor.specialization %></td>
+                <td>
+                    <a href="/admin/doctors/edit/<%= doctor._id %>">Edit</a>
+                    <a href="/admin/doctors/delete/<%= doctor._id %>" onclick="return confirm('Are you sure you want to delete this doctor?')">Delete</a>
+                </td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>

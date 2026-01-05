@@ -1,0 +1,44 @@
+<h2>Add Donor</h2>
+<form action="/admin/donors/add" method="POST">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+    <div>
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone">
+    </div>
+    <div>
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob">
+    </div>
+    <div>
+        <label for="bloodGroup">Blood Group:</label>
+        <input type="text" id="bloodGroup" name="bloodGroup">
+    </div>
+    <div>
+        <label for="donationType">Donation Type:</label>
+        <input type="text" id="donationType" name="donationType">
+    </div>
+    <div>
+        <label for="organType">Organ Type:</label>
+        <input type="text" id="organType" name="organType">
+    </div>
+    <div>
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location">
+    </div>
+    <div>
+        <label for="availability">Availability:</label>
+        <input type="text" id="availability" name="availability">
+    </div>
+    <div>
+        <label for="medicalInfo">Medical Info:</label>
+        <textarea id="medicalInfo" name="medicalInfo"></textarea>
+    </div>
+    <button type="submit">Add Donor</button>
+</form>

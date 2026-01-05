@@ -1,0 +1,40 @@
+<h2>Add Donation Request</h2>
+<form action="/admin/requests/add" method="POST">
+    <div>
+        <label for="patientName">Patient Name:</label>
+        <input type="text" id="patientName" name="patientName" required>
+    </div>
+    <div>
+        <label for="type">Type:</label>
+        <input type="text" id="type" name="type" required>
+    </div>
+    <div>
+        <label for="specific">Specific:</label>
+        <input type="text" id="specific" name="specific">
+    </div>
+    <div>
+        <label for="urgency">Urgency:</label>
+        <input type="text" id="urgency" name="urgency">
+    </div>
+    <div>
+        <label for="requiredDate">Required Date:</label>
+        <input type="date" id="requiredDate" name="requiredDate">
+    </div>
+    <div>
+        <label for="details">Details:</label>
+        <textarea id="details" name="details"></textarea>
+    </div>
+    <div>
+        <label for="contactPerson">Contact Person:</label>
+        <input type="text" id="contactPerson" name="contactPerson">
+    </div>
+    <div>
+        <label for="contactPhone">Contact Phone:</label>
+        <input type="text" id="contactPhone" name="contactPhone">
+    </div>
+    <div>
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location">
+    </div>
+    <button type="submit">Add Request</button>
+</form>

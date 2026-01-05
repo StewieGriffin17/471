@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Suggest Doctor</title>
+  <link rel="stylesheet" href="/css/donation.css">
+  <link rel="stylesheet" href="theme.css" />
+  <link rel="stylesheet" href="doctor.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+        <h1><a href="/home" style="text-decoration: none; color: inherit;">💉 Donation Hub</a></h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/requests">View Requests</a></li>
+            <li><a href="/donors">Find Donors</a></li>
+            <li><a href="/requests/post">Post Request</a></li>
+            <li><a href="/donors/register">Become a Donor</a></li>
+            <li><a href="/react-app/doctorlist.html">Doctors</a></li>
+            <li><a href="/react-app/firstaid.html">First Aid</a></li>
+            <li><a href="/react-app/homeservice_list.html">Home Service</a></li>
+            <li><a href="/react-app/myappointments.html">My Appointments</a></li>
+            <li><a href="/vue-app">Hospital Locator</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+  <div class="page-container">
+    <main class="doc-layout">
+      <section class="card">
+        <h2>Search filters</h2>
+        <div class="filters">
+          <div class="form-group">
+            <label>Symptom / Specialty</label>
+            <input id="symptomInput" placeholder="burn, emergency, cardiology..." />
+          </div>
+          <div class="form-group">
+            <label>Location</label>
+            <input id="locationInput" placeholder="Dhaka, Chattogram..." />
+          </div>
+          <button id="searchBtn" class="btn btn-primary">Search Doctors</button>
+        </div>
+        <p class="doc-hint">
+          If you came from the First-Aid Chatbot, your last detected symptom will be pre-filled.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Available doctors</h2>
+        <div id="doctorsContainer" class="list-column"></div>
+      </section>
+    </main>
+
+    <!-- Booking modal -->
+    <div id="bookingModal" class="modal">
+      <div class="modal-content">
+        <span id="closeModal" class="close-modal">&times;</span>
+        <div class="modal-header">Book appointment</div>
+
+        <form id="bookingForm">
+  <div class="form-group">
+    <label for="patientName">Patient name</label>
+    <input id="patientName" required />
+  </div>
+
+  <div class="form-group">
+    <label for="patientPhone">Phone number</label>
+    <input id="patientPhone" required />
+  </div>
+
+  <!-- NEW: Date picker -->
+  <div class="form-group">
+    <label for="appointmentDate">Select date</label>
+    <input id="appointmentDate" type="date" required />
+  </div>
+
+  <!-- NEW: Slot dropdown -->
+  <div class="form-group">
+    <label for="slotSelect">Select time slot</label>
+    <select id="slotSelect" disabled required>
+      <option value="">Select a date first</option>
+    </select>
+  </div>
+
+  <!-- Keep reason (nice extra for marks) -->
+  <div class="form-group">
+    <label for="reason">Reason (optional)</label>
+    <textarea id="reason"></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Confirm booking</button>
+  <button type="button" id="cancelBooking" class="btn btn-secondary">
+    Cancel
+  </button>
+</form>
+
+<div id="bookingSuccess" class="success-message"></div>
+
+<div id="postBookingActions" class="post-actions" style="display:none; margin-top:12px;">
+  <button type="button" id="goMyAppointments" class="btn btn-primary">
+    View My Appointments
+  </button>
+  <button type="button" id="goDoctorList" class="btn btn-secondary">
+    Back to Doctor List
+  </button>
+  <button type="button" id="goChatbot" class="btn btn-secondary">
+    Back to Chatbot
+  </button>
+  <button type="button" id="goHomeService" class="btn btn-secondary">
+    Need Home Service?
+  </button>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-secondary" style="margin-top: 18px;"
+            onclick="window.location.href='firstaid.html'">
+      ← Back to First-Aid Chatbot
+    </button>
+  </div>
+
+  <script src="doctor.js" defer></script>
+</body>
+</html>

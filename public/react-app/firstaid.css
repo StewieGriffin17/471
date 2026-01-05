@@ -1,0 +1,118 @@
+.fa-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.fa-header h1 {
+  font-size: 2.1rem;
+  color: var(--secondary);
+}
+
+.fa-header p {
+  color: var(--secondary-light);
+}
+
+.fa-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 18px;
+}
+
+.fa-chat-window {
+  background: #e3f2fd;
+  border-radius: 16px;
+  padding: 12px 14px;
+  height: 420px;
+  overflow-y: auto;
+  border: 1px solid rgba(191, 219, 254, 0.9);
+}
+
+/* Chat bubbles */
+.fa-msg {
+  max-width: 80%;
+  padding: 8px 12px;
+  border-radius: 14px;
+  margin-bottom: 8px;
+  font-size: 0.93rem;
+  line-height: 1.5;
+}
+
+.fa-msg.user {
+  margin-left: auto;
+  background: var(--primary);
+  color: #fff;
+  border-bottom-right-radius: 3px;
+}
+
+.fa-msg.bot {
+  margin-right: auto;
+  background: #ffffff;
+  color: var(--secondary);
+  border-left: 4px solid var(--primary);
+}
+
+/* Form below chat */
+.fa-chat-form {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.fa-chat-form input {
+  flex: 1;
+}
+
+/* Right column */
+.fa-help-text {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.fa-symptom-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.fa-symptom-btn {
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--primary);
+  background: #fff;
+  color: var(--primary-dark);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.fa-symptom-btn:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+.fa-info-box {
+  background: #e8f5e9;
+  border-left: 4px solid var(--success);
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 0.88rem;
+  color: #166534;
+  margin-bottom: 10px;
+}
+
+#findDoctorBtn[disabled] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+@media (max-width: 900px) {
+  .fa-layout {
+    grid-template-columns: 1fr;
+  }
+  .fa-chat-window {
+    height: 320px;
+  }
+}

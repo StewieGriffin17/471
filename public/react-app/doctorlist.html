@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doctor List</title>
+
+  <!-- Keep consistency with the rest of the project -->
+  <link rel="stylesheet" href="/css/donation.css">
+  <link rel="stylesheet" href="theme.css" />
+  <link rel="stylesheet" href="doctorlist.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+        <h1><a href="/home" style="text-decoration: none; color: inherit;">💉 Donation Hub</a></h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/requests">View Requests</a></li>
+            <li><a href="/donors">Find Donors</a></li>
+            <li><a href="/requests/post">Post Request</a></li>
+            <li><a href="/donors/register">Become a Donor</a></li>
+            <li><a href="/react-app/doctorlist.html">Doctors</a></li>
+            <li><a href="/react-app/firstaid.html">First Aid</a></li>
+            <li><a href="/react-app/homeservice_list.html">Home Service</a></li>
+            <li><a href="/react-app/myappointments.html">My Appointments</a></li>
+            <li><a href="/vue-app">Hospital Locator</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+  <div class="page-container">
+    <main class="doc-layout">
+      <!-- Filters Card -->
+      <section class="card">
+        <h2>Search filters</h2>
+
+        <div class="filters">
+          <div class="form-group">
+            <label for="specInput">Specialization</label>
+            <input
+              id="specInput"
+              placeholder="Type specialization (e.g., Neurology)"
+            />
+          </div>
+
+          <div class="filter-actions">
+            <button id="searchBtn" class="btn btn-primary">Search</button>
+            <button id="backBtn" class="btn btn-secondary">Back to Chatbot</button>
+          </div>
+        </div>
+
+        <p class="doc-hint">
+          Tip: If you came from the First-Aid Chatbot, the specialization may be auto-filled.
+        </p>
+      </section>
+
+      <!-- Doctors Card -->
+      <section class="card">
+        <h2>Available doctors</h2>
+        <div id="doctorContainer" class="grid"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="doctorlist.js" defer></script>
+</body>
+</html>

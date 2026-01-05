@@ -1,0 +1,27 @@
+<h2>Donation Requests</h2>
+<a href="/admin/requests/add">Add Request</a>
+<table>
+    <thead>
+        <tr>
+            <th>Patient Name</th>
+            <th>Type</th>
+            <th>Urgency</th>
+            <th>Required Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% requests.forEach(request => { %>
+            <tr>
+                <td><%= request.patientName %></td>
+                <td><%= request.type %></td>
+                <td><%= request.urgency %></td>
+                <td><%= request.requiredDate %></td>
+                <td>
+                    <a href="/admin/requests/edit/<%= request._id %>">Edit</a>
+                    <a href="/admin/requests/delete/<%= request._id %>" onclick="return confirm('Are you sure you want to delete this request?')">Delete</a>
+                </td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>

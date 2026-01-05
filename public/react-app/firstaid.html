@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>First-Aid Chatbot</title>
+  <link rel="stylesheet" href="/css/donation.css">
+  <link rel="stylesheet" href="theme.css" />
+  <link rel="stylesheet" href="firstaid.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+        <h1><a href="/home" style="text-decoration: none; color: inherit;">💉 Donation Hub</a></h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/requests">View Requests</a></li>
+            <li><a href="/donors">Find Donors</a></li>
+            <li><a href="/requests/post">Post Request</a></li>
+            <li><a href="/donors/register">Become a Donor</a></li>
+            <li><a href="/react-app/doctorlist.html">Doctors</a></li>
+            <li><a href="/react-app/firstaid.html">First Aid</a></li>
+            <li><a href="/react-app/homeservice_list.html">Home Service</a></li>
+            <li><a href="/react-app/myappointments.html">My Appointments</a></li>
+            <li><a href="/vue-app">Hospital Locator</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+  <div class="page-container">
+    <main class="fa-layout">
+      <!-- LEFT: Chat section -->
+      <section class="card fa-chat">
+        <h2>Chat</h2>
+        <div id="chatWindow" class="fa-chat-window"></div>
+
+        <form id="chatForm" class="fa-chat-form">
+          <input
+            type="text"
+            id="chatInput"
+            placeholder="Describe your issue, e.g. 'I have a burn on my hand'"
+            required
+          />
+          <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+      </section>
+
+      <!-- RIGHT: Symptoms + doctor navigation -->
+      <section class="card fa-side">
+        <h2>Quick Symptoms</h2>
+        <p class="fa-help-text">
+          Tap a symptom to auto-fill the chatbot, or type your own description.
+        </p>
+
+        <div id="symptomButtons" class="fa-symptom-list"></div>
+
+        <div class="fa-info-box">
+          <p id="faStatus">
+            Start by sending your first message. When a known symptom is detected,
+            you can jump to doctor suggestion.
+          </p>
+        </div>
+
+        <button id="findDoctorBtn" class="btn btn-assign" disabled>
+          Find Doctor for this Problem
+        </button>
+
+        <button
+  type="button"
+  class="btn btn-secondary"
+  onclick="window.location.href='doctorlist.html'">
+  Go directly to Doctor List
+</button>
+
+      </section>
+    </main>
+  </div>
+
+  <script src="firstaid.js" defer></script>
+</body>
+</html>

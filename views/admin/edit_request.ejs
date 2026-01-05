@@ -1,0 +1,40 @@
+<h2>Edit Donation Request</h2>
+<form action="/admin/requests/edit/<%= request._id %>" method="POST">
+    <div>
+        <label for="patientName">Patient Name:</label>
+        <input type="text" id="patientName" name="patientName" value="<%= request.patientName %>" required>
+    </div>
+    <div>
+        <label for="type">Type:</label>
+        <input type="text" id="type" name="type" value="<%= request.type %>" required>
+    </div>
+    <div>
+        <label for="specific">Specific:</label>
+        <input type="text" id="specific" name="specific" value="<%= request.specific %>">
+    </div>
+    <div>
+        <label for="urgency">Urgency:</label>
+        <input type="text" id="urgency" name="urgency" value="<%= request.urgency %>">
+    </div>
+    <div>
+        <label for="requiredDate">Required Date:</label>
+        <input type="date" id="requiredDate" name="requiredDate" value="<%= request.requiredDate %>">
+    </div>
+    <div>
+        <label for="details">Details:</label>
+        <textarea id="details" name="details"><%= request.details %></textarea>
+    </div>
+    <div>
+        <label for="contactPerson">Contact Person:</label>
+        <input type="text" id="contactPerson" name="contactPerson" value="<%= request.contactPerson %>">
+    </div>
+    <div>
+        <label for="contactPhone">Contact Phone:</label>
+        <input type="text" id="contactPhone" name="contactPhone" value="<%= request.contactPhone %>">
+    </div>
+    <div>
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" value="<%= request.location %>">
+    </div>
+    <button type="submit">Update Request</button>
+</form>

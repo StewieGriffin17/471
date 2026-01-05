@@ -1,0 +1,32 @@
+<div class="container">
+    <h2>All Requests</h2>
+
+    <% if (requests.length === 0) { %>
+        <div class="empty-state">
+            <div class="empty-state-icon">📋</div>
+            <h3>No Requests Yet</h3>
+            <p>It looks like there are no active requests. Why not be the first to post one?</p>
+            <a href="/requests/post" class="btn btn-primary">Post a Request</a>
+        </div>
+    <% } else { %>
+        <div class="requests-list">
+        <% requests.forEach(req => { %>
+            <div class="request-card">
+                <div class="card-header">
+                    <div class="card-title"><%= req.patientName %></div>
+                    <span class="badge badge-urgent"><%= (req.urgency || '').toUpperCase() %></span>
+                </div>
+                <div class="card-info">
+                    <div><strong>Type:</strong> <%= req.specific %> (<%= req.type %>)</div>
+                    <div><strong>Required By:</strong> <%= new Date(req.requiredDate).toLocaleDateString() %></div>
+                    <div><strong>Location:</strong> <%= req.location %></div>
+                    <div><strong>Contact:</strong> <%= req.contactPerson %> - <%= req.contactPhone %></div>
+                    <% if (req.details) { %>
+                        <p style="margin-top: 10px; color: #666; font-size: 0.9em;"><%= req.details %></p>
+                    <% } %>
+                </div>
+            </div>
+        <% }) %>
+        </div>
+    <% } %>
+</div>

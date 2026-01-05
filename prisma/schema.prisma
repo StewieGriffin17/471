@@ -1,0 +1,65 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model SearchHistory {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId        String?  @db.ObjectId
+  query         String
+  latitude      Float
+  longitude     Float
+  resultsCount  Int
+  searchType    String   @default("hospital")
+  searchedAt    DateTime @default(now())
+}
+
+model SavedPlace {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId        String?  @db.ObjectId
+  sessionId     String?
+  placeId       String
+  name          String
+  address       String
+  latitude      Float
+  longitude     Float
+  phone         String?
+  rating        Float?
+  distance      Float?
+  placeType     String   @default("hospital")
+  savedAt       DateTime @default(now())
+  
+  @@index([userId])
+  @@index([sessionId])
+  @@index([placeId])
+}
+
+model PlaceRating {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId        String?  @db.ObjectId
+  sessionId     String?
+  placeId       String
+  placeName     String
+  rating        Int
+  comment       String?
+  category      String
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  
+  @@index([placeId])
+  @@index([userId])
+  @@index([sessionId])
+}
+
+model HealthQuote {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  quote         String
+  author        String?
+  category      String?
+  isActive      Boolean  @default(true)
+  createdAt     DateTime @default(now())
+}

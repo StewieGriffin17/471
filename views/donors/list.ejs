@@ -1,0 +1,32 @@
+<div class="container">
+    <h2>Available Donors</h2>
+
+    <% if (donors.length === 0) { %>
+        <div class="empty-state">
+            <div class="empty-state-icon">🩸</div>
+            <h3>No Donors Yet</h3>
+            <p>It looks like there are no registered donors. Be the first to sign up and save a life!</p>
+            <a href="/donors/register" class="btn btn-primary">Become a Donor</a>
+        </div>
+    <% } else { %>
+        <div class="donors-list">
+        <% donors.forEach(donor => { %>
+            <div class="donor-card">
+                <div class="card-header">
+                    <div class="card-title"><%= donor.name %></div>
+                    <span class="badge badge-type"><%= donor.bloodGroup %></span>
+                </div>
+                <div class="card-info">
+                    <div><strong>Donation Type:</strong> <%= donor.donationType %></div>
+                    <% if (donor.organType) { %>
+                        <div><strong>Organ:</strong> <%= donor.organType %></div>
+                    <% } %>
+                    <div><strong>Location:</strong> <%= donor.location %></div>
+                    <div><strong>Availability:</strong> <%= donor.availability %></div>
+                    <div><strong>Contact:</strong> <%= donor.email %></div>
+                </div>
+            </div>
+        <% }) %>
+        </div>
+    <% } %>
+</div>

@@ -1,0 +1,86 @@
+:root{
+  --primary: #5b4bda;   /* purple */
+  --title: #2447a8;     /* deep blue */
+  --bg1: #eef3ff;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --border: #d7ddff;
+}
+
+body{
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(180deg, var(--bg1), #f7f3ff);
+  color: #111827;
+}
+
+.page{
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+h1{
+  text-align: center;
+  color: var(--title);
+  font-size: 44px;
+  margin-bottom: 8px;
+}
+
+#subtitle{
+  text-align: center;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.filters{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.filters input{
+  width: 320px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  outline: none;
+}
+
+.filters button{
+  padding: 12px 16px;
+  border: none;
+  border-radius: 10px;
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+}
+
+.filters button:hover{ opacity: 0.9; }
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.card h3{ margin: 0 0 8px; }
+.card p{ margin: 6px 0; color: #374151; }
+.badge{
+  display: inline-block;
+  background: #eef2ff;
+  color: var(--primary);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+}

@@ -1,0 +1,31 @@
+<h2>Home Service Requests</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Patient Name</th>
+            <th>Service Type</th>
+            <th>Preferred Date</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% homeServices.forEach(homeService => { %>
+            <tr>
+                <td><%= homeService.patientName %></td>
+                <td><%= homeService.serviceType %></td>
+                <td><%= homeService.preferredDate %></td>
+                <td>
+                    <form action="/admin/homeservice/update-status/<%= homeService._id %>" method="POST">
+                        <select name="status" onchange="this.form.submit()">
+                            <option value="pending" <%= homeService.status === 'pending' ? 'selected' : '' %>>Pending</option>
+                            <option value="confirmed" <%= homeService.status === 'confirmed' ? 'selected' : '' %>>Confirmed</option>
+                            <option value="completed" <%= homeService.status === 'completed' ? 'selected' : '' %>>Completed</option>
+                            <option value="cancelled" <%= homeService.status === 'cancelled' ? 'selected' : '' %>>Cancelled</option>
+                        </select>
+                    </form>
+                </td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Appointments</title>
+
+  <link rel="stylesheet" href="/css/donation.css">
+  <link rel="stylesheet" href="theme.css" />
+  <style>
+    .actions-row { display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; }
+    .appt-card { margin-bottom: 12px; }
+    .muted { color: var(--text-muted); }
+    .row { display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+    .pill { padding: 4px 10px; border-radius: 999px; font-size: 12px; border: 1px solid rgba(255,255,255,0.15); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+        <h1><a href="/home" style="text-decoration: none; color: inherit;">💉 Donation Hub</a></h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/requests">View Requests</a></li>
+            <li><a href="/donors">Find Donors</a></li>
+            <li><a href="/requests/post">Post Request</a></li>
+            <li><a href="/donors/register">Become a Donor</a></li>
+            <li><a href="/react-app/doctorlist.html">Doctors</a></li>
+            <li><a href="/react-app/firstaid.html">First Aid</a></li>
+            <li><a href="/react-app/homeservice_list.html">Home Service</a></li>
+            <li><a href="/react-app/myappointments.html">My Appointments</a></li>
+            <li><a href="/vue-app">Hospital Locator</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+  <div class="page-container">
+    <main class="doc-layout">
+      <section class="card">
+        <div class="row">
+          <h2 style="margin:0;">Appointments</h2>
+          <button id="refreshBtn" class="btn btn-primary">Refresh</button>
+        </div>
+
+        <p id="statusText" class="muted" style="margin-top:8px;">Loading...</p>
+        <div id="apptList"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="myappointments.js" defer></script>
+</body>
+</html>

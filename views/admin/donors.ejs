@@ -1,0 +1,25 @@
+<h2>Donors</h2>
+<a href="/admin/donors/add">Add Donor</a>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Blood Group</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% donors.forEach(donor => { %>
+            <tr>
+                <td><%= donor.name %></td>
+                <td><%= donor.email %></td>
+                <td><%= donor.bloodGroup %></td>
+                <td>
+                    <a href="/admin/donors/edit/<%= donor._id %>">Edit</a>
+                    <a href="/admin/donors/delete/<%= donor._id %>" onclick="return confirm('Are you sure you want to delete this donor?')">Delete</a>
+                </td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>

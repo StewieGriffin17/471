@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Home Service Booking</title>
+  <link rel="stylesheet" href="/css/donation.css">
+  <link rel="stylesheet" href="theme.css" />
+  <style>
+    .row { display:flex; gap:12px; flex-wrap:wrap; }
+    .row .form-group { flex:1; min-width:240px; }
+    .muted { color: var(--text-muted); }
+    .success { margin-top:12px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+        <h1><a href="/home" style="text-decoration: none; color: inherit;">💉 Donation Hub</a></h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/requests">View Requests</a></li>
+            <li><a href="/donors">Find Donors</a></li>
+            <li><a href="/requests/post">Post Request</a></li>
+            <li><a href="/donors/register">Become a Donor</a></li>
+            <li><a href="/react-app/doctorlist.html">Doctors</a></li>
+            <li><a href="/react-app/firstaid.html">First Aid</a></li>
+            <li><a href="/react-app/homeservice_list.html">Home Service</a></li>
+            <li><a href="/react-app/myappointments.html">My Appointments</a></li>
+            <li><a href="/vue-app">Hospital Locator</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+  <div class="page-container">
+    <main class="doc-layout">
+      <section class="card">
+        <h2>Create a Request</h2>
+        <p id="prefillNote" class="muted"></p>
+
+        <form id="homeForm">
+          <div class="row">
+            <div class="form-group">
+              <label>Patient name</label>
+              <input id="patientName" required />
+            </div>
+            <div class="form-group">
+              <label>Phone</label>
+              <input id="patientPhone" required />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group">
+              <label>Service type</label>
+              <select id="serviceType" required>
+                <option value="">Select service</option>
+                <option>Home Nursing</option>
+                <option>Injection / Dressing</option>
+                <option>Physiotherapy</option>
+                <option>Doctor Home Visit</option>
+                <option>Ambulance</option>
+                <option>Lab Sample Collection</option>
+                <option>Oxygen / Nebulizer Setup</option>
+                <option>Home Equipment (Bed/Wheelchair/Others)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Preferred date</label>
+              <input id="preferredDate" type="date" required />
+            </div>
+
+            <div class="form-group">
+              <label>Preferred slot</label>
+              <select id="preferredSlot" required>
+                <option value="">Select slot</option>
+                <option>09:00-10:00</option>
+                <option>10:00-11:00</option>
+                <option>11:00-12:00</option>
+                <option>12:00-13:00</option>
+                <option>14:00-15:00</option>
+                <option>15:00-16:00</option>
+                <option>16:00-17:00</option>
+                <option>18:00-19:00</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group">
+              <label>City</label>
+              <input id="city" placeholder="Dhaka" required />
+            </div>
+            <div class="form-group">
+              <label>Area</label>
+              <input id="area" placeholder="Mirpur 11" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Full address</label>
+            <input id="address" placeholder="House/Road details" required />
+          </div>
+
+          <div class="form-group">
+            <label>Notes (optional)</label>
+            <textarea id="notes" placeholder="Any extra instructions..."></textarea>
+          </div>
+
+          <div class="row">
+            <button type="submit" class="btn btn-primary">Submit Request</button>
+            <button type="button" id="resetBtn" class="btn btn-secondary">Reset</button>
+          </div>
+
+          <div id="result" class="success muted"></div>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script src="homeservice.js" defer></script>
+</body>
+</html>

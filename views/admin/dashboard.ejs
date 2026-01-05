@@ -1,0 +1,102 @@
+
+<div class="dashboard-container">
+    <h1>Admin Dashboard</h1>
+    <p>Welcome to the admin panel!</p>
+
+    <div class="dashboard-sections">
+        <div class="section-card">
+            <h2>Doctors</h2>
+            <ul>
+                <li><a href="/admin/doctors">View All Doctors</a></li>
+                <li><a href="/admin/doctors/add">Add New Doctor</a></li>
+            </ul>
+        </div>
+
+        <div class="section-card">
+            <h2>Home Services</h2>
+            <ul>
+                <li><a href="/admin/homeservices">View Home Service Requests</a></li>
+            </ul>
+        </div>
+
+        <div class="section-card">
+            <h2>Appointments</h2>
+            <ul>
+                <li><a href="/admin/appointments">View All Appointments</a></li>
+            </ul>
+        </div>
+
+        <div class="section-card">
+            <h2>Donation Requests</h2>
+            <ul>
+                <li><a href="/admin/requests">View All Requests</a></li>
+                <li><a href="/admin/requests/add">Add New Request</a></li>
+            </ul>
+        </div>
+
+        <div class="section-card">
+            <h2>Donors</h2>
+            <ul>
+                <li><a href="/admin/donors">View All Donors</a></li>
+                <li><a href="/admin/donors/add">Add New Donor</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<style>
+    .dashboard-container {
+        padding: 20px;
+    }
+
+    .dashboard-container h1 {
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .dashboard-container p {
+        color: #666;
+        margin-bottom: 20px;
+    }
+
+    .dashboard-sections {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+    }
+
+    .section-card {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        padding: 20px;
+    }
+
+    .section-card h2 {
+        color: #007bff;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+    }
+
+    .section-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .section-card ul li {
+        margin-bottom: 10px;
+    }
+
+    .section-card ul li a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        transition: color 0.2s ease-in-out;
+    }
+
+    .section-card ul li a:hover {
+        color: #0056b3;
+    }
+</style>

@@ -1,0 +1,44 @@
+<h2>Edit Donor</h2>
+<form action="/admin/donors/edit/<%= donor._id %>" method="POST">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="<%= donor.name %>" required>
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="<%= donor.email %>" required>
+    </div>
+    <div>
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone" value="<%= donor.phone %>">
+    </div>
+    <div>
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" value="<%= donor.dob %>">
+    </div>
+    <div>
+        <label for="bloodGroup">Blood Group:</label>
+        <input type="text" id="bloodGroup" name="bloodGroup" value="<%= donor.bloodGroup %>">
+    </div>
+    <div>
+        <label for="donationType">Donation Type:</label>
+        <input type="text" id="donationType" name="donationType" value="<%= donor.donationType %>">
+    </div>
+    <div>
+        <label for="organType">Organ Type:</label>
+        <input type="text" id="organType" name="organType" value="<%= donor.organType %>">
+    </div>
+    <div>
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" value="<%= donor.location %>">
+    </div>
+    <div>
+        <label for="availability">Availability:</label>
+        <input type="text" id="availability" name="availability" value="<%= donor.availability %>">
+    </div>
+    <div>
+        <label for="medicalInfo">Medical Info:</label>
+        <textarea id="medicalInfo" name="medicalInfo"><%= donor.medicalInfo %></textarea>
+    </div>
+    <button type="submit">Update Donor</button>
+</form>

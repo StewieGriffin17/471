@@ -1,0 +1,40 @@
+<h2>Edit Doctor</h2>
+<form action="/admin/doctors/edit/<%= doctor._id %>" method="POST">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="<%= doctor.name %>" required>
+    </div>
+    <div>
+        <label for="specialization">Specialization:</label>
+        <input type="text" id="specialization" name="specialization" value="<%= doctor.specialization %>" required>
+    </div>
+    <div>
+        <label for="chamber">Chamber:</label>
+        <input type="text" id="chamber" name="chamber" value="<%= doctor.chamber %>">
+    </div>
+    <div>
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" value="<%= doctor.location %>">
+    </div>
+    <div>
+        <label for="availableDays">Available Days (comma-separated):</label>
+        <input type="text" id="availableDays" name="availableDays" value="<%= doctor.availableDays.join(',') %>">
+    </div>
+    <div>
+        <label for="time">Time:</label>
+        <input type="text" id="time" name="time" value="<%= doctor.time %>">
+    </div>
+    <div>
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone" value="<%= doctor.phone %>">
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="<%= doctor.email %>">
+    </div>
+    <div>
+        <label for="fee">Fee:</label>
+        <input type="number" id="fee" name="fee" value="<%= doctor.fee %>">
+    </div>
+    <button type="submit">Update Doctor</button>
+</form>
