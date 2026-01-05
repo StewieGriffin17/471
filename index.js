@@ -19,7 +19,7 @@ const config = {
 };
 
 const app = express();
-const port = 1528;
+const port = process.env.PORT;
 
 // For parsing form data
 app.use(express.urlencoded({ extended: true }));
